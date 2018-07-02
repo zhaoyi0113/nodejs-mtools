@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 
 # install node
 RUN apt-get update && apt-get install --yes curl  gnupg2 gcc g++ make net-tools git-core
