@@ -8,8 +8,8 @@ RUN npm install -g yarn
 
 # install python
 RUN add-apt-repository ppa:jonathonf/python-3.6
-RUN apt-get install --yes python3.6 python-pip python-dev build-essential 
-RUN pip install mtools pymongo
+RUN apt-get install --yes python python-pip python-dev build-essential 
+RUN pip install mtools pymongo psutil
 
 # install mongodb
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
