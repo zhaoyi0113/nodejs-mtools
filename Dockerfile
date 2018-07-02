@@ -1,11 +1,15 @@
 FROM ubuntu
 
 # install node
-RUN apt-get update && apt-get install --yes curl
-RUN curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
-RUN apt-get install --yes nodejs
-RUN apt-get install --yes build-essential
+RUN apt-get update && apt-get install --yes curl  gnupg2 gcc g++ make
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install --yes nodejs build-essential
 RUN npm install -g yarn
+
+# install python
+RUN add-apt-repository ppa:jonathonf/python-3.6
+RUN apt-get install --yes python3.6 python-pip python-dev build-essential 
+RUN pip install mtools pymongo
 
 # install mongodb
 
